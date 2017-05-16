@@ -1,0 +1,46 @@
+<div class='panel panel-primary'>
+    <div class='panel-heading'>
+        {{pageTitle}}
+    </div>
+    <div class='panel-body'>
+        
+        <div class='row'>
+            <div class='col-md-2'>
+                
+                <label>Festival name:</label> <input #Name />
+                <label>Festival Location:</label> <input #Location />
+                <label>Festival Genre:</label> <input #Genre />
+                <label>Festival Age:</label> <input #Age />
+                <label>Festival Date:</label> <input #Date />
+                <a class='btn btn-default' (click)="add(Name.value, Location.value, Genre.value, Age.value, Date.value); Name.value='' + Location.value='' + Genre.value='' + Age.value='' + Date.value=''" style='width:80px'>Post</a>
+                
+
+            </div>
+        </div>
+        <div class='table-responsive'>
+            <table class='table' *ngIf='festivalen && festivalen.length'>
+                 
+                <thead>
+                    <tr>
+                        
+                        <th>Festival</th>
+                        <th>Location</th>
+                        <th>Genre</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let festival of festivalen'>
+                        <td><a [routerLink]="['/festivals', festival._id]">{{ festival.name }}</a></td>
+                        <td>{{ festival.location }}</td>
+                        <td>{{ festival.genre }}</td>
+                        <a class='btn btn-default' (click)='delete(festival)' style='width:80px'>delete</a>
+        
+                    </tr>    
+                </tbody>
+            </table>
+        </div>
+    
+    </div>              
+            
+</div>   

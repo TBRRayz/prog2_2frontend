@@ -1,0 +1,54 @@
+<div class='panel panel-primary' *ngIf='festival'>
+    <div class='panel-heading' style='font-size:large'>
+        {{pageTitle + ': ' + festival.name}}
+    </div>
+    
+    <div class='panel-body'>
+        <div class='row'>
+            <div class='col-md-6'>
+                <div class='row'>
+                    <div class='col-md-3'>
+                        <label>name: </label>
+                        <input [(ngModel)]="festival.name" placeholder="name" />
+                    </div>
+                    <div class='col-md-6'>{{festival.name}}</div>
+                    
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'><label>location: </label>
+                        <input [(ngModel)]="festival.location" placeholder="loaction" />
+                    </div>
+                    <div class='col-md-6'>{{festival.location}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'><label>genre: </label>
+                        <input [(ngModel)]="festival.genre" placeholder="genre" />
+                    </div>
+                    <div class='col-md-6'>{{festival.genre}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'><label>age: </label>
+                        <input [(ngModel)]="festival.age" placeholder="age" />
+                    </div>
+                    <div class='col-md-6'>{{festival.age}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'><label>date: </label>
+                        <input [(ngModel)]="festival.date" placeholder="date" />
+                    </div>
+                    <div class='col-md-6'>{{festival.date}}</div>
+                </div>
+               </div>
+              </div>
+             </div>
+    
+    
+    <div class='panel-footer'>
+        <a class='btn btn-default' (click)='onBack()' style='width:80px'>
+            <i class='glyphicon glyphicon-chevron-left'></i> Back
+        </a>
+        <a class='btn btn-default' (click)='save()' style='width:80px'>Save</a>
+        
+                       
+     </div>       
+</div>
